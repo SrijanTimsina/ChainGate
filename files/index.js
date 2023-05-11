@@ -27,6 +27,19 @@ document.getElementById("copy-text").addEventListener("click", () => {
 	document.getElementById("copied").style.display = "block";
 });
 
+sidebarContainer = document.getElementById("side-bar-container");
+
+document.getElementById("hamburger").addEventListener("click", () => {
+	document.body.style.overflow = "hidden";
+	sidebarContainer.classList.add("side-bar-show");
+	sidebarContainer.classList.remove("side-bar-hide");
+});
+document.getElementById("close").addEventListener("click", () => {
+	document.body.style.overflow = "auto";
+	sidebarContainer.classList.add("side-bar-hide");
+	sidebarContainer.classList.remove("side-bar-show");
+});
+
 const submitForm = () => {
 	const status = true;
 

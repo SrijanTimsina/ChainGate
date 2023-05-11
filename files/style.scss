@@ -35,12 +35,21 @@ body {
 		color: white;
 	}
 }
+.main-container-bg {
+	background: url("./images/development-bg.png") no-repeat;
+	background-size: 700px 200px;
+}
 .main-container {
 	max-width: 800px;
 	margin: auto;
 	padding: 60px;
 	padding-right: 50px;
+	opacity: 0;
+	transition: opacity 3s ease-in-out;
 
+	&.show {
+		opacity: 1;
+	}
 	a {
 		color: gray;
 	}
@@ -56,8 +65,8 @@ body {
 			color-scheme: dark;
 			cursor: pointer;
 			outline: none;
-			width: 250px;
 			margin: 20px 0;
+			width: 100%;
 		}
 		#date-time:hover {
 			background-color: #ff03ad;

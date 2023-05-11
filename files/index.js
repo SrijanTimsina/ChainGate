@@ -6,6 +6,11 @@ const minDateTimeISO = now.toISOString().slice(0, 16);
 const utcHour = now.getUTCHours();
 const utcMinute = now.getUTCMinutes();
 
+window.onload = function () {
+	const element = document.querySelector(".main-container");
+	element.classList.add("show");
+};
+
 document.getElementById(
 	"current-time-display"
 ).innerText = `${utcHour}:${

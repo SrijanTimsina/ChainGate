@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ChainGate</title>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+		/>
+	</head>
+	<link rel="stylesheet" href="./files/style.css" />
+	<body>
+		<div class="navbar">
+			<div class="logo">
+				<img src="./files/images/logo.svg" alt="Logo" />
+			</div>
+			<a
+				href="https://tome.app/gasfee-predictor/predicting-ethereum-gas-prices-with-a-neural-network-model-clgckzsye0j1vd241j7bc5329"
+				target="_blank"
+				>Documentation</a
+			>
+			<a href="https://twitter.com/astrid_net" target="_blank"
+				>Twitter</a
+			>
+			<a href="https://www.astrid.network/" target="_blank"
+				>Website</a
+			>
+		</div>
+		<div class="main-container-bg">
+			<div class="main-container">
+				<div
+					class="request-form-container"
+					id="request-form-container"
+				>
+					<div class="heading">
+						<h1>Schedule your transaction.</h1>
+						<h1>Execute it at lowest Gas Price.</h1>
+						<h1>Save Fees and embrace power of AI.</h1>
+					</div>
+					<div class="heading-desc clr-gray">
+						<p>
+							ChainGate is a service that can predict the price of gas
+							up to 12 hours in advance and execute your transaction
+							when demand is lower and gas is cheaper.
+						</p>
+						<p>
+							Our service allows you to save on gas fees paid and the
+							network to avoid congestion issues.
+						</p>
+						<p>
+							Follow the steps above if you want to use this service.
+						</p>
+					</div>
+					<div class="request-form">
+						<form
+							action="{{ url_for('requestResponse') }}"
+							method="POST"
+							id="form-request"
+						>
+							<div class="div form-element">
+								<h3 class="form-heading">
+									1. Select Date and the Deadline Hour to execute your
+									transaction.
+								</h3>
+								<p class="form-desc clr-gray">
+									Select the day on which you would like to execute
+									the transaction and the closing time during which it
+									must be executed. Please note our systems are
+									referred to UTC (actually
+									<span id="current-time-display"> 16:29 P.M. </span>
+									)
+								</p>
+								<input
+									type="text"
+									onfocus="(this.type='datetime-local')"
+									id="date-time"
+									name="start_date"
+									class="datetime"
+									placeholder="Pickup Date"
+								/>
+							</div>
+							<div class="form-element">
+								<h3 class="form-heading">2. Execute the payment.</h3>
+								<p class="form-desc clr-gray">
+									One prediction costs 1.00$ and is paid in FET token.
+									Please make sure you have a Fetch Wallet
+									<a
+										href="https://chrome.google.com/webstore/detail/fetch-wallet/ellkdbaphhldpeajbepobaecooaoafpg"
+										target="_blank"
+									>
+										like this one
+									</a>
+									and you send a payment of 1.00$ (at the time you're
+									visiting this page, it's worth 4 FET Tokens, fees
+									excluded) at this address:
+								</p>
+								<p class="copy-text" id="copy-text">
+									<span id="text-copy">
+										fetch1xfwhca9xezcjx88vd9lvmyqv6679njxrcn6mcw
+									</span>
+									<img
+										src="./files/images/copy.svg"
+										width="30"
+										height="30"
+										id="copy"
+									/>
+									<img
+										src="./files/images/copied.svg"
+										width="30"
+										height="30"
+										id="copied"
+									/>
+								</p>
+								<p class="form-desc clr-gray">
+									Please pay as follows, making sure the amount and
+									address are correct. Enter the payment transaction
+									hash in the form above:
+								</p>
+								<input
+									type="text"
+									name="payment_txn"
+									placeholder="Insert the Payment Transaction hash"
+									class="txn-hash-input"
+									id="txn-hash"
+								/>
+							</div>
+							<div class="form-element">
+								<h3 class="form-heading">3. Confirm your request.</h3>
+								<p class="form-desc clr-gray">
+									Once you have checked that your details are correct,
+									please click the button below. If everything is
+									fine, you will be shown the URL of your request and
+									you will be able to see the status of your request.
+								</p>
+							</div>
+							<input
+								type="submit"
+								value="Confirm the request"
+								class="confirm-btn"
+								id="confirm-btn"
+							/>
+						</form>
+					</div>
+				</div>
+				<div id="submission-success" class="form-submission-status">
+					<div class="flex">
+						<img
+							src="./files/images/requestSuccessIcon.svg"
+							alt="Success"
+							height="50px"
+							width="50px"
+						/>
+						<h2>Your request was successfully scheduled.</h2>
+					</div>
+					<p>
+						Your request was successfully scheduled and stored in our
+						systems. <br />Track the status of your request
+						<a
+							href="track.html"
+							target="_blank"
+							style="color: #ff03ad"
+						>
+							on this url.
+						</a>
+					</p>
+				</div>
+				<div id="submission-failed" class="form-submission-status">
+					<div class="flex">
+						<img
+							src="./files/images/requestFailedIcon.svg"
+							alt="Failed"
+							height="50px"
+							width="50px"
+						/>
+						<h2>Your request somehow failed.</h2>
+					</div>
+					<p>Your request failed because of ERROR.</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="./files/index.js"></script>
+</html>

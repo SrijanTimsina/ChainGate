@@ -166,12 +166,11 @@ body {
 .tracking-status {
   max-width: 800px;
   margin: auto;
-  padding: 60px 30px 0 25px;
-  padding-right: 50px;
+  padding: 60px 25px;
 }
 
 .tracking-status .info-container {
-  margin: 60px 20px 60px 50px;
+  margin: 60px 20px 60px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,4 +200,41 @@ body {
   padding: 20px;
   border: 2px solid #ff03ad;
   text-align: center;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 800px;
+  margin: auto;
+  border-top: 1px solid white;
+  line-height: 20px;
+  padding: 50px 0;
+  gap: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0px;
+  }
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer .footerSection {
+  width: 250px;
+  padding: 20px;
+}
+
+footer .footerSection .headerButton img {
+  height: 60px;
+  width: 60px;
 }

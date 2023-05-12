@@ -114,11 +114,10 @@ body {
 .tracking-status {
 	max-width: 800px;
 	margin: auto;
-	padding: 60px 30px 0 25px;
-	padding-right: 50px;
+	padding: 60px 25px;
 
 	.info-container {
-		margin: 60px 20px 60px 50px;
+		margin: 60px 20px 60px 20px;
 		display: flex;
 		justify-content: space-between;
 		gap: 20px;
@@ -137,6 +136,35 @@ body {
 			padding: 20px;
 			border: 2px solid #ff03ad;
 			text-align: center;
+		}
+	}
+}
+footer {
+	display: flex;
+	max-width: 800px;
+	margin: auto;
+	border-top: 1px solid white;
+	line-height: 20px;
+	padding: 50px 0;
+	gap: 100px;
+
+	@media screen and (max-width: 768px) {
+		flex-direction: column;
+		gap: 0px;
+	}
+
+	a {
+		color: white;
+		text-decoration: none;
+	}
+	.footerSection {
+		width: 250px;
+		padding: 20px;
+		.headerButton {
+			img {
+				height: 60px;
+				width: 60px;
+			}
 		}
 	}
 }

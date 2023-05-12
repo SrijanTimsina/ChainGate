@@ -11,6 +11,11 @@ window.onload = function () {
 	element.classList.add("show");
 };
 
+dateTime.addEventListener("focus", () => {
+	dateTime.setAttribute("type", "datetime-local");
+	dateTime.click();
+});
+
 document.getElementById(
 	"current-time-display"
 ).innerText = `${utcHour}:${

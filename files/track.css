@@ -29,12 +29,14 @@ body {
 }
 
 .navbar .logo img {
-  height: 100px;
+  height: 120px;
 }
 
 .navbar a {
   color: gray;
   text-decoration: none;
+  font-size: 13px;
+  font-weight: 300;
   -webkit-transition: color 0.4s;
   transition: color 0.4s;
 }
@@ -144,7 +146,7 @@ body {
 }
 
 .sidebar-container .logo img {
-  height: 100px;
+  height: 140px;
 }
 
 .sidebar-container .close {
@@ -198,7 +200,7 @@ body {
 .tracking-status .current-status p {
   width: 100%;
   padding: 20px;
-  border: 2px solid #ff03ad;
+  border: 2px solid #ff03ed;
   text-align: center;
 }
 

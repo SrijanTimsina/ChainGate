@@ -21,12 +21,14 @@ body {
 
 	.logo {
 		img {
-			height: 100px;
+			height: 120px;
 		}
 	}
 	a {
 		color: gray;
 		text-decoration: none;
+		font-size: 13px;
+		font-weight: 300;
 		transition: color 0.4s;
 
 		@media screen and (max-width: 550px) {
@@ -95,7 +97,7 @@ body {
 	}
 	.logo {
 		img {
-			height: 100px;
+			height: 140px;
 		}
 	}
 	.close {
@@ -134,7 +136,7 @@ body {
 		p {
 			width: 100%;
 			padding: 20px;
-			border: 2px solid #ff03ad;
+			border: 2px solid #ff03ed;
 			text-align: center;
 		}
 	}

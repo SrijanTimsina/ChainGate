@@ -147,19 +147,18 @@ body {
 		line-height: 1.35;
 	}
 	.request-form {
-		#date-time {
+		.datetime {
 			border: 2px solid #ff03ed;
 			background-color: black;
 			padding: 15px 20px;
 			color: #d6d5d5;
-			color-scheme: dark;
 			cursor: pointer;
 			outline: none;
 			margin: 20px 0;
 			width: 100%;
 			transition: all 0.6s ease-in;
 		}
-		#date-time:hover {
+		.datetime:hover {
 			background-color: #ff03ed;
 			color: white;
 

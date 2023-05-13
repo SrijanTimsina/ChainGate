@@ -19,6 +19,10 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+		/>
 		<link rel="stylesheet" href="./files/style.css" />
 	</head>
 	<body>
@@ -113,8 +117,9 @@
 									<span id="current-time-display"> 16:29 P.M. </span>
 									)
 								</p>
+
 								<input
-									type="text"
+									type="datetime-local"
 									id="date-time"
 									name="start_date"
 									class="datetime"
@@ -270,6 +275,14 @@
 				</p>
 			</div>
 		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+		<script>
+			flatpickr("#date-time", {
+				minDate: "today",
+				enableTime: true,
+				dateFormat: "Y-m-d H:i",
+			});
+		</script>
+		<script src="./files/index.js"></script>
 	</body>
-	<script src="./files/index.js"></script>
 </html>

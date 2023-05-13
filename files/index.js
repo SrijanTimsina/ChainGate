@@ -11,18 +11,11 @@ window.onload = function () {
 	element.classList.add("show");
 };
 
-dateTime.addEventListener("focus", () => {
-	dateTime.setAttribute("type", "datetime-local");
-	dateTime.click();
-});
-
 document.getElementById(
 	"current-time-display"
 ).innerText = `${utcHour}:${
 	utcMinute > 9 ? utcMinute : "0" + utcMinute
 } ${utcHour > 11 ? "P.M." : "A.M."}`;
-
-dateTime.min = minDateTimeISO;
 
 document.getElementById("copy-text").addEventListener("click", () => {
 	navigator.clipboard.writeText(
@@ -66,13 +59,18 @@ document
 	.getElementById("form-request")
 	.addEventListener("submit", (e) => {
 		e.preventDefault();
-		const time = new Date();
-		if (dateTime.value < time.toISOString().slice(0, 16)) {
-			alert("Please Enter a valid date");
+		const time = new Date(new Date().getTime() + 2 * 60000);
+		const requiredTime = time.toISOString().slice(0, 16);
+		const selectedDate = dateTime.value.replace(" ", "T");
+
+		if (selectedDate < requiredTime) {
+			alert(
+				"The time you selected must be at least 2 minutes ahead."
+			);
 			return;
 		}
 		const txnHash = document.getElementById("txn-hash").value;
-		if (document.getElementById("txn-hash").value == "") {
+		if (txnHash == "") {
 			alert("Please Enter the payment transaction hash");
 			return;
 		}

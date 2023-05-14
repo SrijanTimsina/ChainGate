@@ -9,6 +9,9 @@ body {
 	font-family: sans-serif;
 	letter-spacing: 0.1px;
 }
+p {
+	font-weight: 100;
+}
 .clr-gray {
 	color: gray;
 }
@@ -138,7 +141,8 @@ body {
 	}
 	.heading {
 		h1 {
-			font-weight: 400;
+			font-size: 32px;
+			font-weight: 700;
 		}
 	}
 	.heading-desc {
@@ -242,7 +246,7 @@ body {
 		.form-heading {
 			font-size: 24px;
 			margin: 25px 0;
-			font-weight: 400;
+			font-weight: 200;
 		}
 	}
 	.form-submission-status {

@@ -11,6 +11,13 @@ window.onload = function () {
 	element.classList.add("show");
 };
 
+flatpickr("#date-time", {
+	minDate: now.toISOString().slice(0, 16),
+	enableTime: true,
+	disableMobile: true,
+	dateFormat: "Y-m-d H:i",
+});
+
 document.getElementById(
 	"current-time-display"
 ).innerText = `${utcHour}:${

@@ -59,13 +59,13 @@ document
 	.getElementById("form-request")
 	.addEventListener("submit", (e) => {
 		e.preventDefault();
-		const time = new Date(new Date().getTime() + 2 * 60000);
+		const time = new Date(new Date().getTime() + 12 * 60000);
 		const requiredTime = time.toISOString().slice(0, 16);
 		const selectedDate = dateTime.value.replace(" ", "T");
 
 		if (selectedDate < requiredTime) {
 			alert(
-				"The time you selected must be at least 2 minutes ahead."
+				"The time you selected must be at least 12 minutes ahead."
 			);
 			return;
 		}

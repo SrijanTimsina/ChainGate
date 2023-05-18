@@ -1,0 +1,15 @@
+.form-submission-status {
+	max-width: 800px;
+	margin: 50px auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: end;
+
+	.flex {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+		margin-bottom: 30px;
+	}
+}

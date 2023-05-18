@@ -6,6 +6,11 @@ const minDateTimeISO = now.toISOString().slice(0, 16);
 const utcHour = now.getUTCHours();
 const utcMinute = now.getUTCMinutes();
 
+const currentUrl = window.location.href;
+
+const successURL = `${currentUrl}requestSuccess.html`;
+const failURL = `${currentUrl}requestFail.html`;
+
 window.onload = function () {
 	const element = document.querySelector(".main-container");
 	element.classList.add("show");
@@ -32,33 +37,16 @@ document.getElementById("copy-text").addEventListener("click", () => {
 	document.getElementById("copied").style.display = "block";
 });
 
-sidebarContainer = document.getElementById("side-bar-container");
-
-document.getElementById("hamburger").addEventListener("click", () => {
-	document.body.style.overflow = "hidden";
-	sidebarContainer.classList.add("side-bar-show");
-	sidebarContainer.classList.remove("side-bar-hide");
-});
-document.getElementById("close").addEventListener("click", () => {
-	document.body.style.overflow = "auto";
-	sidebarContainer.classList.add("side-bar-hide");
-	sidebarContainer.classList.remove("side-bar-show");
-});
-
 const submitForm = () => {
 	const status = true;
 
 	// Form Submission Code here //
 	// If form submission failed change status to false //
 
-	document.getElementById("request-form-container").style.display =
-		"none";
 	if (status) {
-		document.getElementById("submission-success").style.display =
-			"block";
+		window.location.href = successURL;
 	} else {
-		document.getElementById("submission-failed").style.display =
-			"block";
+		window.location.href = failURL;
 	}
 };
 

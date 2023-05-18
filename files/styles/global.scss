@@ -8,6 +8,7 @@ body {
 	color: white;
 	font-family: sans-serif;
 	line-height: 1.25;
+	letter-spacing: 0.1px;
 }
 
 .navbar {
@@ -113,34 +114,6 @@ body {
 	}
 }
 
-.tracking-status {
-	max-width: 800px;
-	margin: auto;
-	padding: 60px 25px;
-
-	.info-container {
-		margin: 60px 20px 60px 20px;
-		display: flex;
-		justify-content: space-between;
-		gap: 20px;
-
-		.info {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			gap: 10px;
-			font-size: 18px;
-		}
-	}
-	.current-status {
-		p {
-			width: 100%;
-			padding: 20px;
-			border: 2px solid #ff03ed;
-			text-align: center;
-		}
-	}
-}
 footer {
 	display: flex;
 	max-width: 800px;

@@ -24,7 +24,7 @@
 			referrerpolicy="no-referrer"
 		/>
 		<link rel="stylesheet" href="./files/styles/global.css" />
-		<link rel="stylesheet" href="./files/styles/track.css" />
+		<link rel="stylesheet" href="./files/styles/request.css" />
 	</head>
 	<body>
 		<div class="navbar">
@@ -74,29 +74,18 @@
 				</li>
 			</ul>
 		</div>
-		<div class="tracking-status">
-			<h1>Request Status</h1>
-
-			<div class="info-container">
-				<div class="info">
-					<p id="req-id">4</p>
-					<p>Request ID</p>
+		<div id="submission-failed" class="form-submission-status">
+			<div>
+				<div class="flex">
+					<img
+						src="./files/images/requestFailedIcon.svg"
+						alt="Failed"
+						height="50px"
+						width="50px"
+					/>
+					<h2>Your request somehow failed.</h2>
 				</div>
-				<div class="info">
-					<p id="req-date">2023/12/05</p>
-					<p>Date</p>
-				</div>
-				<div class="info">
-					<p>12 A.M.</p>
-					<p>Deadline</p>
-				</div>
-			</div>
-
-			<div class="current-status">
-				<p>
-					<span style="color: #ff03ed"> Current Status: </span> Under
-					Scheduling
-				</p>
+				<p>Your request failed because of ERROR.</p>
 			</div>
 		</div>
 		<footer>

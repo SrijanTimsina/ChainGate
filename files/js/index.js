@@ -21,7 +21,36 @@ flatpickr("#date-time", {
 	enableTime: true,
 	disableMobile: true,
 	dateFormat: "Y-m-d H:i",
+	onChange: dateChange,
 });
+
+var dateCheck = false;
+var txnHashCheck = false;
+
+function dateChange(selectedDates, dateStr, instance) {
+	const time = new Date(new Date().getTime() + 12 * 60000);
+	const requiredTime = time.toISOString().slice(0, 16);
+	const selectedDate = dateStr.replace(" ", "T");
+	dateCheck = selectedDate > requiredTime;
+	changeHandler();
+}
+
+function inputChange(e) {
+	const txnHash = e.target.value;
+	txnHashCheck = txnHash != "";
+	changeHandler();
+}
+
+function changeHandler() {
+	const button = document.getElementById("confirm-btn");
+	const status = dateCheck && txnHashCheck;
+
+	if (status) {
+		button.disabled = false;
+	} else {
+		button.disabled = true;
+	}
+}
 
 document.getElementById(
 	"current-time-display"
@@ -51,25 +80,5 @@ const submitForm = () => {
 };
 
 document
-	.getElementById("form-request")
-	.addEventListener("submit", (e) => {
-		e.preventDefault();
-		const time = new Date(new Date().getTime() + 12 * 60000);
-		const requiredTime = time.toISOString().slice(0, 16);
-		const selectedDate = dateTime.value.replace(" ", "T");
-
-		if (selectedDate < requiredTime) {
-			alert(
-				"The time you selected must be at least 12 minutes ahead."
-			);
-			return;
-		}
-		const txnHash = document.getElementById("txn-hash").value;
-		if (txnHash == "") {
-			alert("Please Enter the payment transaction hash");
-			return;
-		}
-
-		submitForm();
-		return;
-	});
+	.getElementById("txn-hash")
+	.addEventListener("input", inputChange);
